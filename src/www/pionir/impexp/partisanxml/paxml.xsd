@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="partisanxml" >
+ <xsd:attribute name="version" type="xsd:string" use="required" />
+ <xsd:attribute name="db" type="xsd:string" use="required" />
+ <xsd:element name="object" type="objectType" minOccurs="0" />
+ <xsd:element name="class" type="classType" minOccurs="0" />
+ <xsd:element name="option" type="optionType" minOccurs="0" />
+</xsd:element>
+
+
+
+<xsd:complexType name="objectTyp">
+ <xsd:attribute name="type" type="xsd:string" use="required"/>
+ <xsd:attribute name="wiid" type="xsd:string" use="required"/>
+ <xsd:attribute name="roid" type="xsd:decimal" use="required"/>
+ <xsd:attribute name="creation_date" type="xsd:date"/>
+ <xsd:attribute name="modification_date" type="xsd:date"/>
+ <xsd:attribute name="fieldID" type="xsd:string"/>
+ <xsd:attribute name="attach" type="xsd:string"/>
+ <xsd:sequence>
+  <xsd:sequence>
+    <xsd:element ref="class" minOccurs="0" />
+   </xsd:sequence>
+   <xsd:sequence>
+    <xsd:element ref="option" minOccurs="0" />
+  </xsd:sequence>
+  <xsd:element name="parameters" type="objectParametersType">
+  <xsd:element ref="object" />
+  <xsd:element name="elements" type="relationshipsType" />
+ </xsd:sequence>
+</xsd:complexType>
+
+
+
+<xsd:complexType name="classType">
+ <xsd:attribute name="name" type="xsd:string" use="required" />
+ <xsd:attribute name="type" type="xsd:string" use="required" />
+ <xsd:element name="parameters" type="parametersType" />
+ <xsd:element name="attributes">
+  <xsd:element name="attribute">
+   <xsd:element name="parameters" type="parametersType" />
+  </xsd:element>
+ </xsd:element>
+</xsd:complexType>
+
+
+
+<xsd:complexType name="optionType">
+ <xsd:attribute name="type" type="xsd:string" use="required" />
+ <xsd:attribute name="name" type="xsd:string" use="required" />
+ <xsd:element name="parameters"  type="parametersTypeWithClass" />
+ <xsd:element ref="elements" />
+</xsd:complexType>
+
+
+
+<xsd:complexType name="objectParametersType">
+ <xsd:attribute name="class" type="xsd:string" />
+ <xsd:element name="parameter">
+  <xsd:attribute name="name" type="xsd:string" use="required" />
+  <xsd:attribute name="type" type="parameterType" />
+ </xsd:element>
+ <xsd:element ref="object" />
+</xsd:complexType>
+
+
+<xsd:complexType name="parametersTypeWithClass">
+ <xsd:attribute name="class" type="xsd:string" />
+ <xsd:element name="parameter">
+  <xsd:attribute name="name" type="xsd:string" use="required" />
+  <xsd:attribute name="type" type="parameterType" />
+ </xsd:element>
+</xsd:complexType>
+
+
+<xsd:complexType name="parametersType">
+ <xsd:element name="parameter">
+  <xsd:attribute name="name" type="xsd:string" use="required" />
+ </xsd:element>
+</xsd:complexType>
+
+
+
+<xsd:simpleType name="parameterTyp">
+ <xsd:restriction base="xsd:string">
+  <xsd:enumeration value="class" />
+  <xsd:enumeration value="option" />
+ </xsd:restriction>
+</xsd:simpleType>
+
+
+
+<xsd:complexType name="relationshipsType">
+ <xsd:attribute name="type" type="xsd:string" use="required" />
+ <xsd:element name="relationship">
+  <xsd:element name="parameter">
+   <xsd:attribute name="name" type="xsd:string" use="required" />
+   <xsd:attribute name="type" type="parameterType" />
+  </xsd:element>
+  <xsd:element ref="object" />
+ </xsd:element>
+</xsd:complexType>
+
+</xsd:schema>
+<!--
+    discus: extraclass and extra attrib parameter do not have/need type. extra
+    parameter definition
+    
+    still to define relationsType
+//-->
+

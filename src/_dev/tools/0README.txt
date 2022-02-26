@@ -1,0 +1,1 @@
+contains scripts which support creation/installation Application artefacts and patches

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="22" viewBox="0 0 40 22" > 
+  <rect x="1" y="1" rx="3" ry="3" width="38" height="20" style="fill:none;stroke:#E0E0E0;stroke-width:2;" />
+   <text x="20" y="16" fill="#E0E0E0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif;" font-size="16px">REQ</text>
+</svg>

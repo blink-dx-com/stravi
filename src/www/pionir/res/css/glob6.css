@@ -1,0 +1,34 @@
+/* global CSS */
+.yhea1 { color: #EFEFEF; }
+.y1 { color: #665c84; }
+.yBrig { color: #FFFFFF; }
+a.yBrig { color: #FFFFFF; text-decoration:underline; }
+
+#yNavGray { color:gray }
+
+
+
+body.yBodyDark { background-color:#9c92ba; color: #B0B0B0; white-space:nowrap;}
+.yLFramHead { border:0px; margin:0px; padding:0px; width:100%; background-color:#aca2ca; }
+.yLFramHead2 { border:0px; margin:0px; padding:0px; width:100%; background-color:#ddd3fb; }
+.yLFramHead3 { border:0px; margin:0px; padding:0px; width:100%; background-color:#d3c9f1; }
+.ylfr0 { color: #C0C0C0; white-space:nowrap; text-decoration:none !important;}
+.ylfr1 { color: #D0D0D0; white-space:nowrap; text-decoration:none !important;}
+.ylfr2 { color: #FFFFFF; white-space:nowrap; text-decoration:none !important;}
+.ylfr3 { background-color:#554b73; color:#FFFFFF; white-space:nowrap; text-decoration:none !important;}
+.yMColor1 {background-color:#d3c9f1;}
+
+.yBodyHead { background-color:#6e648c; color: #E0E0E0; }
+.yBodyHead a:link    { color:#E0E0E0; }
+.yBodyHead a:visited { color:#E0E0E0; }
+.yBodyHead a:active  { color:#E0E0E0; }
+
+.yBodyDark2 { background-color:#30264e; color: #FFFFFF; }
+.yBodyDark3 a:link { color:#fff5ff; }
+.yBodyDark3 a:visited { color:#fff5ff; }
+.yBodyDark3 a:active { color:#fff5ff; }
+
+.yPlugHead { background-color:#9c92ba; color: #FFFFFF; } 
+.yPlugHead a:link    { color:#FFFFFF }
+.yPlugHead a:visited { color:#FFFFFF }
+.yPlugHead a:active  { color:#FFFFFF }

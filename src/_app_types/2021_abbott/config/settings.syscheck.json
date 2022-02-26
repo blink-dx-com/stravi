@@ -1,0 +1,10 @@
+{
+  "COMMENMT": "blacklists for syscheck.php",
+  "blacklist": [
+  	 "NTDPAL_EXE",
+  	 "exe.R",
+  	 "img_path",
+  	 "lab.hube.PROD",
+  	 "lab.hube.DEV"
+  ]
+}

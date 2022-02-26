@@ -1,0 +1,188 @@
+{
+    "view": {
+        "run_status": {
+            "program__": "cmd /C start \"\"",
+            "url": "http://{{ BLOCK_HOST }}:5011/html/state_viewer"
+        },
+        "static_status": {
+            "program__": "cmd /C start \"\"",
+            "url": "http://{{ BLOCK_HOST }}:5011/html/state_viewer"
+        }
+    },
+    "name": "pcr_cycler",
+    "param": {
+        "series_file": {
+            "__value__": "C:\\dev\\python\\blink\\assay\\mock\\series.txt",
+            "__help__": "File with feature time series values in columns"
+        },
+        "features": {
+            "__value__": [
+                "temperature"
+            ],
+            "__help__": "List with features to monitor"
+        },
+        "step": {
+            "__value__": 0.01,
+            "__help__": "Time sleep between monitor events"
+        },
+        "snr": {
+            "__value__": 50,
+            "__help__": "Signal to noise ratio"
+        },
+        "grab_dir": {
+            "__value__": "C:\\dev\\python\\blink\\assay\\mock\\images\\flux_PCR_TB",
+            "__help__": "Directory with image files"
+        }
+    },
+    "blocks": [
+        {
+            "block": {
+                "category": 4,
+                "notes": "Mock Feature Monitor",
+                "tool": "mock/monitor",
+                "id": "block_id_5b607bd0-e7fc-412d-88f8-65c1d35e978e",
+                "param": {
+                    "series_file": {
+                        "__value__": "C:\\dev\\python\\blink\\assay\\mock\\series.txt",
+                        "__help__": "File with feature time series values in columns"
+                    },
+                    "features": {
+                        "__value__": [
+                            "temperature"
+                        ],
+                        "__help__": "List with features to monitor"
+                    },
+                    "step": {
+                        "__value__": 0.01,
+                        "__help__": "Time sleep between monitor events"
+                    },
+                    "snr": {
+                        "__value__": 50,
+                        "__help__": "Signal to noise ratio"
+                    },
+                    "delimiter": "\t",
+                    "grab_dir": {
+                        "__value__": "C:\\dev\\python\\blink\\assay\\mock\\images\\flux_PCR_TB",
+                        "__help__": "Directory with image files"
+                    }
+                },
+                "run": {
+                    "start": "2019-03-05 15:37:46.252",
+                    "context": {
+                        "__value__": "36d720cd-3f54-11e9-8330-c0b6f9ac2f14",
+                        "__type__": "DATA.value/str"
+                    },
+                    "block_dir": {
+                        "__value__": "C:/Home/2019-03-05/st3_exp4",
+                        "__type__": "DATA.value/str"
+                    },
+                    "finish": "2019-03-05 15:37:46.445"
+                }
+            }
+        },
+        {
+            "block": {
+                "category": 4,
+                "notes": "Mock Grab Image",
+                "tool": "mock/grab_image",
+                "id": "block_id_69db5981-d610-40bb-9a94-b559fe32c0d8",
+                "param": {
+                    "grab_dir": {
+                        "__value__": "C:\\dev\\python\\blink\\assay\\mock\\images\\flux_PCR_TB",
+                        "__help__": "Directory with image files"
+                    },
+                    "series_file": {
+                        "__value__": "C:\\dev\\python\\blink\\assay\\mock\\series.txt",
+                        "__help__": "File with feature time series values in columns"
+                    },
+                    "features": {
+                        "__value__": [
+                            "temperature"
+                        ],
+                        "__help__": "List with features to monitor"
+                    },
+                    "step": {
+                        "__value__": 0.01,
+                        "__help__": "Time sleep between monitor events"
+                    },
+                    "snr": {
+                        "__value__": 50,
+                        "__help__": "Signal to noise ratio"
+                    }
+                },
+                "run": {
+                    "start": "2019-03-05 15:37:46.460",
+                    "context": {
+                        "__value__": "36d720cd-3f54-11e9-8330-c0b6f9ac2f14",
+                        "__type__": "DATA.value/str"
+                    },
+                    "block_dir": {
+                        "__value__": "C:/Home/2019-03-05/st3_exp4",
+                        "__type__": "DATA.value/str"
+                    },
+                    "finish": "2019-03-05 15:37:46.460"
+                },
+                "output": {
+                    "image": "C:\\dev\\python\\blink\\assay\\mock\\images\\flux_PCR_TB\\blink_45.bmp"
+                }
+            }
+        }
+    ],
+    "process": {
+        "order": [
+            {
+                "id": "block_id_a0b16ed3-89e8-429a-9727-0887668727ad",
+                "repeat": 45,
+                "view": "",
+                "notes": "Group/Loop",
+                "cycle": 1,
+                "block": [
+                    "block_id_5b607bd0-e7fc-412d-88f8-65c1d35e978e",
+                    "block_id_69db5981-d610-40bb-9a94-b559fe32c0d8"
+                ]
+            }
+        ]
+    },
+    "id": "block_id_006cfae9-65a8-4fdf-a2db-27c1e4e04963",
+    "notes": "PCR Cycler",
+    "category": 5,
+    "tool": "//assay:c:\\dev\\python\\blink\\app\\dabbox\\assays\\pcr_cycler.yaml",
+    "run": {
+        "start": "2019-03-05 15:37:35.514",
+        "context": {
+            "__value__": "36d720cd-3f54-11e9-8330-c0b6f9ac2f14",
+            "__type__": "DATA.value/str"
+        },
+        "version": "d82108172ae000a227a7d3269ca7c71ab1027c33 Mon Mar  4 13:37:44 2019",
+        "host": "Steffen-PC",
+        "block_dir": {
+            "__value__": "C:/Home/2019-03-05/st3_exp4",
+            "__type__": "DATA.value/str"
+        },
+        "finish": "2019-03-05 15:37:46.460",
+        
+        "processline": [
+            {
+                "start": "2019-03-05 15:37:36.217",
+                "finish": "2019-03-05 15:37:46.460",
+                "process": "Group/Loop",
+                "process_id": "block_id_a0b16ed3-89e8-429a-9727-0887668727ad",
+                "state": "__finished__"
+            },
+            {
+                "start": "2019-03-05 15:37:36.217",
+                "finish": "2019-03-05 15:37:46.460",
+                "process": "pcr_cycler",
+                "process_id": "381446443f5411e9934cc0b6f9ac2f14",
+                "state": "__finished__"
+            }
+        ],
+        "status": {
+            "__value__": "pcr_cycler_status.json",
+            "__type__": "MIME.text/json"
+        }
+    },
+    "output": {
+        "image": "C:\\dev\\python\\blink\\assay\\mock\\images\\flux_PCR_TB\\blink_45.bmp"
+    }
+}

@@ -1,0 +1,1 @@
+contains detailed XMLRPC tests outside the UT-framework !

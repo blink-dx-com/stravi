@@ -1,0 +1,12 @@
+<?php
+/**
+ * used by service-scripts; e.g. json_rpc_client_vario.php
+ * @package config.service.inc
+ */
+$connect_params = array (
+	 'url'=>'http://jenblipart02/pionir/api/jsonrpc',
+	 'user'=>'test', 
+	 'pw'=>'1234AbCd',
+	 'dbid'=>'blk'
+);
+

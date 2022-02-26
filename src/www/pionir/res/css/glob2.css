@@ -1,0 +1,33 @@
+
+.yhea1  { color: #EFEFEF; }
+.y1  { color: #003366; }
+.yBrig  { color: #FFFFFF; }
+a.yBrig a:link, a:visited a:active { color: #FFFFFF; text-decoration:underline; }
+#yNavGray { color: gray; }
+
+
+body.yBodyDark  { background-color:#9c7552; color: #B0B0B0; white-space:nowrap;}
+.yLFramHead  { border:0px; margin:0px; padding:0px; width:100%; background-color:#ac8562; }
+.yLFramHead2 { border:0px; margin:0px; padding:0px; width:100%; background-color:#DD9966; }
+.yLFramHead3 { border:0px; margin:0px; padding:0px; width:100%; background-color:#D3BDA9; }
+.ylfr0		{ color: #C0C0C0; white-space:nowrap; text-decoration:none !important;}
+.ylfr1		{ color: #D0D0D0; white-space:nowrap; text-decoration:none !important;}
+.ylfr2		{ color: #FFFFFF; white-space:nowrap; text-decoration:none !important;}
+.ylfr3		{ background-color:#553311; color:#FFFFFF; white-space:nowrap;}
+.yMColor1 {background-color:#D3BDA9;}
+
+
+.yBodyHead { background-color:#6E4318; color: #E0E0E0; } 
+.yBodyHead a:link    { color:#E0E0E0 }
+.yBodyHead a:visited { color:#E0E0E0 }
+.yBodyHead a:active  { color:#E0E0E0 }
+
+.yBodyDark2 { background-color:#302010; color: #FFFFFF; } 
+.yBodyDark3 a:link    { color:#FFE0D0 }
+.yBodyDark3 a:visited { color:#FFE0D0 }
+.yBodyDark3 a:active  { color:#FFE0D0 } 
+	
+.yPlugHead { background-color:#9c7552; color: #FFFFFF; } 
+.yPlugHead a:link    { color:#FFFFFF }
+.yPlugHead a:visited { color:#FFFFFF }
+.yPlugHead a:active  { color:#FFFFFF }

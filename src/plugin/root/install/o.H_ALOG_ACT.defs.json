@@ -1,0 +1,27 @@
+[
+    {
+        "vals": {
+            "NAME": "sent",
+            "TABLE_NAME": "PUR"
+        }
+    },
+    {
+        "vals": {
+            "NAME": "ordered",
+            "TABLE_NAME": "PUR"
+        }
+    },
+    {
+        "vals": {
+            "NAME": "closed",
+            "TABLE_NAME": "PUR"
+        }
+    },
+     {
+        "vals": {
+            "NAME": "assigned",
+            "TABLE_NAME": "WORKLIST"
+        }
+    }
+    
+]

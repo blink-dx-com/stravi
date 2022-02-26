@@ -1,0 +1,9 @@
+#		neuer Schritt		Schritt2		Schritt3
+NAME	EXEC_DATE	1:DEV_ID	1:QUANT	2:SUBST_ID	2:QUANT	3:NOTES
+	2017-02-22	411	1.1	78994	2	note
+	2017-02-23	411	2.2		2	note
+	2017-02-24		3.3	78994	2	note
+						
+						
+						
+						

@@ -1,0 +1,1 @@
+small libraries, which are used by obj.globals.editelem.php

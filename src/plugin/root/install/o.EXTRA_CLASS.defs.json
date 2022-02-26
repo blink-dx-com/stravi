@@ -1,0 +1,74 @@
+[
+    {
+        "vals": {
+            "TABLE_NAME": "LINK",
+            "NAME": "query",
+            "NICE_NAME": "Query",
+            "NOTES": "SQL query"
+        },
+        "ass": {
+            "EXTRA_ATTRIB": [
+                {
+                    "APP_DATA_TYPE_ID": "2",
+                    "NAME": "table",
+                    "MAP_COL": "S01",
+                    "POS": "1",
+                    "NICE_NAME": "Table",
+                    "EXIM": null,
+                    "ID_COL": null,
+                    "FLAGS": null,
+                    "NOTES": null,
+                    "VISIBLE2": "1",
+                    "EDITABLE": "0",
+                    "UNIQUE_COL": "0",
+                    "NOT_NULL": "1"
+                },
+                {
+                    "APP_DATA_TYPE_ID": "6",
+                    "NAME": "sqltext",
+                    "MAP_COL": "S02",
+                    "POS": "2",
+                    "NICE_NAME": "SqlText",
+                    "EXIM": null,
+                    "ID_COL": null,
+                    "FLAGS": null,
+                    "NOTES": null,
+                    "VISIBLE2": "1",
+                    "EDITABLE": "0",
+                    "UNIQUE_COL": "0",
+                    "NOT_NULL": "1"
+                },
+                {
+                    "APP_DATA_TYPE_ID": "2",
+                    "NAME": "dependencies",
+                    "MAP_COL": "S03",
+                    "POS": "3",
+                    "NICE_NAME": "Dependencies",
+                    "EXIM": null,
+                    "ID_COL": null,
+                    "FLAGS": null,
+                    "NOTES": null,
+                    "VISIBLE2": "1",
+                    "EDITABLE": "0",
+                    "UNIQUE_COL": "0",
+                    "NOT_NULL": "1"
+                },
+                {
+                    "APP_DATA_TYPE_ID": "2",
+                    "NAME": "options",
+                    "MAP_COL": "S04",
+                    "POS": "4",
+                    "NICE_NAME": "options",
+                    "EXIM": null,
+                    "ID_COL": null,
+                    "FLAGS": null,
+                    "NOTES": null,
+                    "VISIBLE2": "1",
+                    "EDITABLE": "0",
+                    "UNIQUE_COL": "0",
+                    "NOT_NULL": "1"
+                }
+            ]
+        }
+    }
+]

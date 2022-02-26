@@ -1,0 +1,152 @@
+<?
+
+########################################################################
+## This is the local config file.
+##
+## Change this file according to the needs of a local installation.
+##
+## This file is NOT in the CVS. Instead, the CVS contains a template
+## named 'config.local.inc.template'.
+##
+## If neccessary, generate a new instance of 'config.local.inc' 
+## with this command:
+##
+##        mv  config.local.inc           config.local.inc.old
+##        cp  config.local.inc.template  config.local.inc
+##
+##
+## Configuration files are ALWAYS read in this order:
+## 1) "config.kernel.inc"
+## 2) "config.product.inc"
+## 3) "config.local.inc"
+##
+## All settings in this file will overwrite the settings 
+## in the config files read previously.
+##
+## This file should contain only variable assignments,
+## but no other PHP code. All checks of the variables
+## assigned here are done after all of the configuration
+## files have been read.
+##
+## Piet, 10 Jun 2002
+
+
+
+## Database access:
+## (You may configure access to serveral DBMS services here)
+$database_access[0]["alias"]   = "clon02";           /* alias used in login form */
+$database_access[0]["db"]      = "CLON02.LOCALNET";  /* DBMS service name */
+$database_access[0]["LogName"] = "cct"; 	         /* DBMS user name */
+$database_access[0]["passwd"]  = "change it";        /* DBMS password */
+#$database_access[0]["unshow"] = 1;         		 /* optional: do not show database-index at login ??? */
+#$database_access[0]["deny"]   = 1;         		 // optional: deny login ? 
+#$database_access[0]["deny.message"]   = 'Datenbank wird gewartet';  // optional: on "deny">0, give deny-message
+
+
+## index of other databases should be names, not numbers (reason: unauthorized guys should not try numbers)
+#$database_access["other1"]["alias"]   = "sybase";           /* alias used in login form */
+#$database_access["other1"]["db"]      = "sybase.LOCALNET";  /* DBMS service name */
+#$database_access["other1"]["LogName"] = "cct"; 	          /* DBMS user name */
+#$database_access["other1"]["passwd"]  = "change it";        /* DBMS password */
+### $database_access["other1"]["_dbtype"] = "CDB_OCI8";         /* OPTIONAL: DBMS type */
+
+$database_access_sel           = 0;  // allow database selection "1" or not [0]   
+$database_dbid_def             = ""; // set the default dbid
+
+## Email address of administrator of local Partisan installation:
+$globals["adminEmail"] = "partisan@clondiag.com";
+
+
+
+## File size limits for uploading files (in bytes):
+##   (Any limits given here only reduce the
+##    general limit set by the directive 'upload_max_filesize'
+##    in the PHP configuration file '/etc/httpd/php.ini'.)
+
+#$globals["F.PARTISANXML.IMPORT.UPLOAD_MAX_SIZE"]      = 20971520; /* PartisanXML files */
+#$globals["F.ASCI_TABLE.IMPORT.UPLOAD_MAX_SIZE"]       = 1000000;  /* ASCI table (substance information, spot intensities) */
+#$globals["F.ASCI_ARRAYLAYOUT.IMPORT.UPLOAD_MAX_SIZE"] = 1000000;  /* Array layout and/or mapping files (e.g. GAL) */
+#$globals["F.IMG.IMPORT.UPLOAD_MAX_SIZE"]              = 40000000; /* Files loaded in BO IMG */
+#$globals["F.IMAGE_DB_USER.IMPORT.UPLOAD_MAX_SIZE"]    = 1000000;  /* Picture of user (motivator) */
+
+# Define the security level of access
+# ""	     : DEFAULT: as described in the scripts (check insert, update, delete)
+# "select_on": check select_flag of the BO; this makes the system slower
+#$globals["security_level"]       = "select_on";   // e.g. "select_on"
+#$globals["htmlFrameTop.homeBut"] = "home";  	   // can also be a file on "../lab"
+
+#$globals["xml_rpc.debug_level"] = "0";    // e.g. 1,2,3 set debugging for xml_rpc connections
+#$globals["xml_rpc.debug_dir"]   = "/tmp"; // diretcory  
+#$globals["xml_rpc.debug_keys"]   = array( 'whitefuncs'=>array('count_spots', 'metacall') ); // white list of methods
+ 
+#convert paths in the network to internal server paths
+#can be stored as JSON in DB:GLOBALS
+#globals["sys.net2srv"][] = array("Z:/Data" => "/mnt/net_data"); // convert a windows path to an internal mount point
+#globals["sys.net2srv"][] = array("Z:/home" => "/home");    // convert Windows-home to /home
+
+# allow paths to upload ZIP-files for plugin www/pionir/xmlrpc/upload_zip.php
+#globals["app.upload_zip"]['NGAi'] => array('basedir'=>"Z:\\Forschung\\NGAI\\", 'year_basedir'=>'generated');
+#globals["app.upload_zip"]['blink.one'] => array('basedir'=>"Z:\\NEU\\Data\\", 'year_basedir'=>'blink.one');
+
+#$globals["img.convert.jpg.tool"]    = 1; # use special image converter for JPG?
+#$globals['db.dateFormat']='YYYY-MM-DD'; 
+#$globals["app.helpUrls"]   = array('wiki'=>'http://userwiki/proj/089/help'); // array of url bases
+
+#$globals['app.plug.glob.obj.crea_wiz.CONCRETE_SUBST.CERT.show'] = 1,0,-1; show CERT_FLAG?
+
+#
+# LAB-code specific settings
+#
+
+# Web service of ECM server; see SREQ:0003994 g > ECM-Service interface
+#$globals["app.ecm.url"    = 'http://sap-reporter/ecm_services/ecmcall.php';
+
+# Web service of Hub-E system
+/*
+$globals['app.hube'] = array();
+$globals['app.hube']['PROD'] = array(
+	'url'=> 'https://jenbliapp02.blink.lan/api/json',
+	'user'   => 'erp-importer',
+	'pw'     => '***'
+);
+$globals['app.hube']['DEV'] = array(
+	'url'=> 'https://jenbliapp02.blink.lan:8080/api/json',
+	'user'   => 'erp-importer',
+	'pw'     => '***'
+);
+
+*/
+
+# Connect-config to additional external databases
+/*
+$globals['ext_database']=array(
+  'goz_tmpsqlite'=>array(
+        "host"      => "/tmp/goz_tmpsqlite.db",                
+        "user"      => "",          
+        "passwd"    => "",       
+        "dbtype"    => "CDBSqlite",   
+  )
+);
+*/
+
+
+#$globals["app.hubd.url"]    = 'https://jenbliapp02.blink.lan/api/json';
+#$globals["app.hubd.user"]   = 'erp-importer';
+#$globals["app.hubd.pw"]     = '***';
+#$globals["app.hubd.WPM.pw"]   = '***'; // password for WPM-Amin
+
+// create an device assay-package ABSTRACT_PROTO on EXP creation?
+// 0: do not create, 1: create an ABSTRACT_PROTO for a unique asssay.script
+#$globals["code.oEXP_api_mod.dev_assay.PRA.create"] = 0;
+
+#$globals["app.logfile"]   = "/tmp/partisan.log"; // common partisan error-log-file
+
+// database DATE-format, must match with NLS_DATE_FORMAT
+// formats: 'DD-MMM-YY', 'YYYY-MM-DD'
+
+
+
+
+
+
+#eof

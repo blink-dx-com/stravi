@@ -1,0 +1,15 @@
+<?php
+/**
+ * config file for database-installer
+ * $Header: /group/it/cvs/partisan/config/confInst.local.inc.template,v 1.1 2009/01/23 08:11:01 steffen Exp $
+ * @package confInstTemplate
+ * @author  Steffen Kube (steffen.kube@gmx.de, steffen@blink-dx.com)
+ */
+ 
+ function gConfigInstGet() {
+	$confvars["installpass"]  = ""; 	// password for database-installer
+	$confvars["dbBackupDir"]  = "/local_data/backup";
+	$confvars["appDataDir"]   = "/local_data/appdata"; 
+	$confvars["appTempRoot"]  = "../Temp"; // root-directory of app-temp
+	return ($confvars);
+ }

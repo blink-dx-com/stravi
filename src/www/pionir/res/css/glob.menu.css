@@ -1,0 +1,168 @@
+/* OLD global menu CSS */
+.menu {
+	border:none;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	color:#404040;
+	font-size:12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	float: left; /* needed to place menu on left, other text on right */
+	width: 70%;
+}
+.menu ul{
+	height:22px;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.menu li{
+	float:left; /*kubi*/
+	padding:0px;
+}	
+.menu li a{
+	color:#404040;
+	display:block;
+	line-height:22px;
+	margin:0px;
+	padding:0px 10px;
+	text-align:center;
+	text-decoration:none;
+}
+.menu li a:hover, .menu ul li:hover a {
+	color:#101010;
+	text-decoration:none;
+	filter: brightness(90%);
+}
+
+
+/*** #1 ***/
+.menu li ul{
+	background-color:#cfcfcf; /* efefef */
+	display:none;
+	height:auto;
+	padding:0px;
+	margin:0px;
+	border:0px;
+	position:absolute;
+	width:230px;
+	z-index:200;
+	/*top:1em;
+	/*left:0;*/
+}
+
+/*** #2 ***/
+.menu li:hover ul{
+		display:block;
+}
+
+.menu li li {
+	display:block;
+	float:none;
+	margin:0px;
+	padding:0px;
+	width:230px;
+}
+
+.menu li:hover li a{
+	/* NEW: 15:33 background:none; */
+}
+
+.menu li ul a{
+	display:block;
+	color:#303030;
+	height:22px;
+	font-size:12px;;
+	font-style:normal;
+	margin:0px;
+	padding:0px 10px 0px 15px;
+	text-align:left;
+}
+
+.menu li ul a:hover, .menu li ul li:hover a{
+	background:#cfcfdf;
+	border:0px;
+	color:#101010;
+	text-decoration:none;
+}
+
+/*************************************************/
+
+/*** #1 ***/
+.menu li ul ul{
+	background:#D0D0D0;
+	display:block;
+	height:auto;
+	padding:0px;
+	margin:-2em 0 0 100px; /* QBi: put the 3.menu closer to X-axis of 2.menu ! */
+	border:0px;
+	position:absolute;
+	width:300px;
+	z-index:300;
+	left:-999em;
+	/*top:1em;
+	/*left:0;*/
+}
+
+/*** #2 ***/
+.menu li ul li:hover ul{
+	left:auto;
+}
+
+.menu li:hover ul ul, .menu li:hover li ul{
+	left:-999em;
+}
+
+
+.menu li li li {
+	float:none;
+	margin:0px;
+	padding:0px;
+	width:300px;
+}
+
+
+.menu ul ul ul a{
+	height:22px;
+	color:#303030;
+	font-size:12px;;
+	font-style:normal;
+	margin:0px;
+	padding:0px 10px 0px 15px;
+	text-align:left;
+}
+
+.menu li li:hover li a{
+	color:#303030;
+	background:#D0D0D0;
+}
+
+.menu li ul li li:hover a{
+	background:#C0C0C0; 
+	border:0px;
+	color:#101010;
+	text-decoration:none;
+}
+
+
+.menu p{
+	clear:left;
+}
+
+.xinactive {
+	color:#808080;
+}
+
+.menuBox {
+	/**/
+}
+
+.right1 {
+	/*float: right;*/
+	text-align:right;
+	height:22px;
+	width: 30%;
+	display:block;overflow:hidden;
+	
+}

@@ -1,0 +1,32 @@
+<?php
+/**
+ * $g['head']['designid']
+ * $g['head']['css'] : extra css text
+ * $g['head']['css_files'] : extra css files
+ */
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no">
+<?php	// for Internet Explorer: 7,8,9 : use strict HTML-rendering ?>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <?php $g['head']['headIn'] ?>
+   <title><?php echo $g['head']['title']; ?></title>
+  <script src="res/js_goz/main.js"></script>
+
+<?php
+	$designid=1; 
+    if ( $g['head']['designid']>0 ) 	$designid = $g['head']['designid'];
+?>
+	<?php // URL-variable ?d=... is to force reloading a new *.css file ?>
+	<link rel="stylesheet" type="text/css" href="res/css/glob<?php echo $designid; ?>.css"?d=11">
+	<link rel="stylesheet" type="text/css" href="res/css/glob_all.css?d=14">
+	<?php if ($g['head']['css']) { ?> 
+	   <style type="text/css">
+	   <?php echo $g['head']['css']; ?>
+	   </style>
+	<?php } ?>
+	
+</head>

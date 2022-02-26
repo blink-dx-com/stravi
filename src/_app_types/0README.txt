@@ -1,0 +1,1 @@
+Conatins application types

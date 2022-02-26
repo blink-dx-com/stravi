@@ -1,0 +1,48 @@
+<?php
+// default structure
+// change the class name: gDB_tranData_X_X_X_X (X_X_X_X is the version)
+
+class gDB_tranData_X_X_X_X extends gDB_transAbstract {
+
+
+	/**
+	 * get basic info of transformation
+	 * Info: this function is new since 2010-03-19
+	 */
+	function getBasicInfo() {
+		$dataArray=NULL;
+		$dataArray["info"] = "new: PROTO_STEPS => device";
+		$dataArray["reqs"] = array(
+						"DbVersionNeed" => "1.0.4.4",
+						"DbVersionNew"  => "1.0.4.5 - 20090319 - 10:01");
+		return $dataArray;
+	}
+	
+	function getData( &$dataArray, $option=NULL ) {
+	
+		$dataArray = NULL;
+		
+		$insarr   = NULL;
+		$insarr[]   = 'alter table add (CHECKER number)';
+		
+		
+		$meta[] = array( "act"=>"insupd", "tab"=>"CCT_COLUMN", "vals"=>array( 
+			'TABLE_NAME'=>'', 'COLUMN_NAME'=>'', 'NICE_NAME'=>'', 'CCT_TABLE_NAME'=>'', 
+		    'APP_DATA_TYPE_ID'=>, 'PRIMARY_KEY'=>0, 'MOST_IMP_COL'=>0, 'NOT_NULL'=>0, 'POS'=>, 'VISIBLE'=>1, 'EDITABLE'=>1) );
+		    
+		    
+		$meta[] = array( "act"=>"upd", "tab"=>"GLOBALS", "vals"=>array("VALUE"=>$dataArray["reqs"]["DbVersionNew"]), "ids"=>array("NAME"=>"DBVersion" ) );
+		
+		
+		$dataArray["sql"]  = &$insarr;
+		$dataArray["meta"] = &$meta;
+	
+	}
+	
+	/**
+	 optional transform
+	 */
+	function transform() {
+	}
+
+}

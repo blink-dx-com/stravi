@@ -1,0 +1,1 @@
+this directory contains basic test to check the main components of the application

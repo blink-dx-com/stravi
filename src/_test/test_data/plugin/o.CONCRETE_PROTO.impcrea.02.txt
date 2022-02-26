@@ -1,0 +1,14 @@
+# Page: [ExportProtoFormat] Export format of 'protocol step file'													
+# Protocol import format													
+# protocol (abstract): Abbott Measurement 01 ID:16337													
+# concrete protocol id	Proto-Date	Operator	blood sample	preparation kit	amplification kit	control kit	HIV_NEG Log(cp/ml)	HIV_LOPOS Log(cp/ml)	HIV_HIPOS Log(cp/ml)	interne Kontrolle (ct)	HIV-1 (ct)	HIV-1 (cp/ml)	HIV-1 Log(cp/ml)
+NAME	EXEC_DATE	3:NOTES	4:SUBST_ID	5:SUBST_ID	6:SUBST_ID	7:SUBST_ID	8:QUANT	9:QUANT	10:QUANT	11:QUANT	12:QUANT	13:QUANT	14:QUANT
+XXX1	2017-09-23	Bert	231297	309120	309121	276472	2	3	4	22	66	5	66
+XXX2	2017-09-21	Bert2	231297	309120	309121	276472	3	3	4	22	66	5	66
+XXX3	2017-09-26	Bert4	231297	309120	309121	276472	4	3	4	22	66	5	66
+													
+													
+													
+													
+													
+													

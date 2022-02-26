@@ -1,0 +1,28 @@
+/* global CSS */
+.yhea1  { color: #EFEFEF; }
+.y1  { color: #333334; }
+.yBrig  { color: #FFFFFF; }
+a.yBrig { color: #FFFFFF; text-decoration:underline; }
+
+#yNavGray { color:gray }
+
+
+body.yBodyDark  { background-color:#52759c; color: #B0B0B0; white-space:nowrap;}
+.yLFramHead  { border:0px; margin:0px; padding:0px; width:100%; background-color:#6285ac; }
+.yLFramHead2 { border:0px; margin:0px; padding:0px; width:100%; background-color:#6699DD; }
+.yLFramHead3 { border:0px; margin:0px; padding:0px; width:100%; background-color:#A9BDD3; }
+.ylfr0		{ color: #C0C0C0; white-space:nowrap; text-decoration:none !important;}
+.ylfr1		{ color: #D0D0D0; white-space:nowrap; text-decoration:none !important;}
+.ylfr2		{ color: #FFFFFF; white-space:nowrap; text-decoration:none !important;}
+.ylfr3		{ background-color:#113355; color:#FFFFFF; white-space:nowrap; text-decoration:none !important;}
+
+
+.yBodyHead { background-color:#404041; color: #000000; } 
+.yBodyHead a:link    { color:#666667; }
+.yBodyHead a:visited { color:#666667; }
+.yBodyHead a:active  { color:#666667; }
+
+#yBodyDark2 { background-color:#102030; color: #FFFFFF; } 
+#yBodyDark2 a:link    { color:#E0E0FF; }
+#yBodyDark2 a:visited { color:#E0E0FF; }
+#yBodyDark2 a:active  { color:#E0E0FF; }

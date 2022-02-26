@@ -1,0 +1,47 @@
+#
+# Libary for Partisan-R-Intermediate formatted file. Containing 
+# two functions to read and to write from/to this file.
+# 
+# (c) CLONDIAG Chip Technologies GmbH 
+#
+
+
+# set option to step r execution at any kind of error 
+options(error = expression(q("no")))
+
+
+# function to read data from intermediate format. the result will
+# be returned as data.frame
+partisan.read <- function(file = "RInput") {
+
+	if (file.exists(file)) {
+		
+		# read from intermediate file
+		read.csv(file)
+	}
+	else {
+
+		# throw an error and stop execution
+		stop("File not found.")
+	}				
+}
+
+
+# function to write into intermediate format. input must be of mode
+# data.frame
+partisan.write <- function(data, file = "ROutput") {
+
+	if (is.data.frame(data)) {
+
+		# write into intermediate file
+		write.table(data, file = file, append = FALSE,				
+			    quote = FALSE, sep = ",",	
+			    col.names = TRUE, row.names = FALSE)	
+	}				
+	else {
+
+		# throw an error and stop execution
+		stop("First parameter must be object of mode data.frame.")
+	}
+}
+

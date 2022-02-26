@@ -1,0 +1,2 @@
+- contains development code for application building
+- example: analyse PHP-modules

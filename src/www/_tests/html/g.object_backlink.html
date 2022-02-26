@@ -1,0 +1,35 @@
+<html>
+<body>
+</body>
+
+
+<a href="test.html" id="dom1">test</a></br>
+<a href="test.html" id="dom2x"></a> <a href="test.html" id="dom3">next LINK</a> </br>(empty HREF-text)</br>
+
+<a href="javascript:linktox('USER_GROUP', 'fyq0');"  id="dom2" style="background-color:#D0D0FF; padding-right:3px; padding-left:3px;  "> </a>
+&nbsp;&nbsp;<span style="white-space:nowrap;"><a href="javascript:openwin('USER_GROUP', 'fyq0', '', '')">[Add group]</a>
+</span>
+TEST2<br><br></br>
+<img src="images/icon.USER_GROUP.gif" title="group"> <input type="hidden" name="new_groupid" id="fyq0" value="not_set">
+<a href="javascript:linktox('USER_GROUP', 'fyq0');"  id="fyq0shy" style="background-color:#D0D0FF; padding-right:3px; padding-left:3px;  ">---</a>
+&nbsp;&nbsp;<span style="white-space:nowrap;"><a href="javascript:openwin('USER_GROUP', 'fyq0', '', '')">[Add group]</a>
+</span>
+
+
+<script type="text/javascript"><!--
+valtexto='neutext';
+
+
+if ( document.getElementById("dom2").hasChildNodes() == false) {
+	/* var myText = document.createElement("span"); */
+	var myText = document.createTextNode("TEST");
+	
+	/* myText.firstChild.nodeValue=valtexto */
+	document.getElementById("dom2").appendChild(myText);
+}
+document.writeln( "type: " +  valtexto   ); 
+document.getElementById("dom2").firstChild.nodeValue = valtexto;
+
+//--></script>
+
+</html>

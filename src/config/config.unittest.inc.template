@@ -1,0 +1,21 @@
+<?php 
+/**
+ * config for Unittest
+ * @swreq UREQ:30; FS-ID:FS-REG02-t2 
+ * @author  Steffen Kube (steffen.kube@gmx.de, steffen@blink-dx.com)
+ */
+$config_unittest = array(
+	//OLD: 'testparams'=> array(
+	    // this user must hhave an active account in the AD
+	    // 'pw_b64': is the password encoded with base64
+	'logincheck.inc'=>array('user'=>'ldap-user', 'pw_b64'=>'') 
+	'jsonrpc'=>array(
+	        'url' =>'http://jenblipart02/pionir/api/json', 
+	        'user'=>'test', 
+	        'pw'  =>'',
+	        'dbid'=>'blk'
+	        
+	    ),
+	 'xmlrpc.target' => "test01.alere2", // configured in xml_rpc_test.inc
+
+);

@@ -1,0 +1,5 @@
+# Unittest: glob.objtab.import.php												
+CONCRETE_SUBST_ID:NAME	NOTES	QUANTITY	c:Number_Beads	c:median_grayvalue	c:median_gray_STD	c:median_gray_CV	c:contrast_dia_CV	c:contrast_gray/dia	c:median_gray_dia_STD	c:median_gray_dia_CV	c:contrast_diameter	c:contrast_dia_STD
+PBL-B 0099	UT: ok	56.45	45		88.34						88.45	78
+PBL-B 0097	UT: error, Class-param: bad format		wrong_type		45.7							
+PBL-B 0096	UT: error, Feasture: QUANTITY bad format	wrong_type	8	88.34								

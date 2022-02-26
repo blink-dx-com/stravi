@@ -1,0 +1,231 @@
+<?php
+$g['head']['css']='
+        body {
+        	background-image:url(images/login_gozilla.jpg); 
+			background-repeat: no-repeat; 
+			background-size: cover; 
+			color:#ffffff;
+        	font-size:24px; font-family:Arial;
+        }
+    	 /* .xField: needed for a bug in IE (different field length for TEXT and PASSWORD) */
+		.xField { width: 250px; font-size: 16px; font-family: Arial; padding:8px;} 
+		.xField_sel { width: 270px; font-size: 16px; font-family: Arial; padding:8px;} 
+        .xField:focus{
+    		border: 1px solid #3366FF;
+    		}
+	    
+         input {
+            text-indent: 3px;
+         }
+
+        .xSmall { color: #ffffff; font-size:medium; text-align:left;}
+        .xLink a:link, a:visited, a:active { color:#ffffff; }
+        table.xOuter {
+       		vertical-align:middle;
+            margin: auto;
+        	width: 300px; 
+        	}
+        table.xTable { }
+        table.xTable td {text-align:left;  }
+
+		
+        table.xTableOpen td {text-align:left; font-size:medium; }
+
+        .submitButton {
+        	font-size: 16px; 
+    		cursor:pointer;
+    		width: 270px;
+    		padding:8px; /* padding:5px 25px; */
+    		background:#3366FF;
+    		color:#ffffff;
+    		border:1px solid #3030DD; 
+    		box-shadow: 0 0 4px rgba(0,0,0, .75);
+    		border-radius: 5px;		
+        }
+        .submitButton:hover, .submitButton:focus{
+    		background-color :#2850E0; /*make the background a little darker*/
+    		box-shadow: 0 0 1px rgba(0,0,0, .75);
+    		}
+    	.center {
+    		margin: auto;
+        	width: 400px;
+        	text-align: center;    
+    		}
+';
+include( dirname(__FILE__).'/../macro/head.html' ); 
+?>
+  
+    
+<body>
+
+<p style="margin-top: 140px;"></p>
+<div  class="center"><!-- DIV:0 -->
+     
+<?php // <img src="images/ic.app_logo_login.png" height=150 vspace=15><br>'; ?>
+<?php echo $g['body']['product.name']; ?> login 
+    	<p style="margin-top: 10px;"></p>
+    	
+    	<?php
+    	## the FORM 
+    	## Pass HTTP parameters which may result from an external hypertext link
+    	## into the application: 
+    	if ( $g['body']['form']['appIsOpen'] ) { 
+			echo "<form name=editform style=\"display:inline;\" method=\"post\" action=\"main.fr.php\">\n"; 
+		} else  { 
+			echo "<form name=editform style=\"display:inline;\" method=\"post\" action=\"main.php\">\n"; 
+		}
+		foreach( $g['body']['form']['hidden'] as $key=>$val ) {
+			echo '<input type=hidden name="'.$key.'" value="'.$val.'">'."\n";
+		}
+
+    	?>
+    	<table border=0 class='xOuter'>
+    	<tr>
+    	<?php if ($g['body']['product.icon']!="") { ?>
+    		<td align=center valign=middle>
+    		<img src="<?php echo $g['body']['product.icon']; ?>">
+    		</td>
+    		<?php
+    	}
+		?>
+    	<td> <!-- LOGIN_FIELDS:START -->
+    	<?php if ( $g['body']['AppIsOpen'] ) { //AppIsOpen  ?>
+	    	<table border=0 class="xTableOpen">
+	    	<tr><td colspan=2><span><b>Session already open<sub>&nbsp;</sub></b></span></td>
+	    	    </tr>
+	    	<tr><td><span ><b>User Name</b></span></td>
+	    	    <td><?php echo $g['body']['appuser']; ?></td></tr>
+	    	<tr><td><span style=""><b>Database name&nbsp;&nbsp;</b></span></td>
+	    	    <td><span style=""><?php echo $g['body']['db_user'] ?>@<?php echo $g['body']['db_name']; ?></span></td></tr>
+	    	<?php 
+	    	//<tr><td><span style=""><b>Application server&nbsp;&nbsp;</b></span></td>
+	    	//    <td><span style=""><php echo $_SERVER["HTTP_HOST"] ></span></td></tr>
+	    	?>
+	    	<tr><td colspan=2><hr size=1 noshade></td></tr> 
+
+	    	<tr>
+	    	 <td width=150 align="right">[<a href="javascript:window.document.forms[0].submit()">resume session</a>]</td>
+	    	 <td width=150 align="right">[<a href="sessionkill.php">kill session</a>]</td>	
+	    	</tr>
+	    	</table>
+    	<?php } else { //AppIsOpen:ELSE  -- is not OPEN -- normal login
+    	?>
+    		<table border=0 class="xTable">
+    		<?php if ( !$g['body']['form']['login_show_db_sel'] ) { ?>
+    			<input type="hidden" name="db_index" value="<?php echo $g['body']['form']['dbid'] ?>">
+    		<?php } ?>	
+    		<?php if ($g['body']['form']['row_dbid'] )  { ?>
+    		    <tr><td></td>
+    		    <td style="font-size:16px;">Database name:&nbsp;<?php echo $g['body']['form']['db_alias_out']; ?>
+    			</td></tr>
+    		<?php } ?>
+    		<?php if ( $g['body']['form']['login_allow'] ) { ?>
+    	    
+	    		<tr><td></td>
+	    		
+	    		    <td><input class="xField" type="text" name="cctuser" tabindex=1 
+	    		       value="<?php echo $g['body']['appuser'] ?>" placeholder="Name"></td></tr>
+	    		<tr><td></td> 
+	    		    <td><input class="xField"  name="cctpwd" type="password" tabindex=2 placeholder="Password"></td></tr>
+	    		<?php if ( $g['body']['form']['login_show_db_sel'] ) { ?>
+	    		    <tr><td></td> 
+	    		       <td><input class="xField"  name="db_index" type="text" tabindex=3 placeholder="Database name" 
+	    		         value="<?php echo $g['body']['form']['dbid'] ?>" ></td></tr>
+	    		<?php } ?> 
+    	    <?php } ?> 
+    		
+    		
+    		
+    		<?php if ($dbAccArr[$dbid]['deny']) { ?>
+    				<tr valign=top><td><b>System-Message:</b></td><td><?php echo $g['body']['form']['deny.message']; ?></td></tr>
+    				<tr valign=top><td></td><td>SysInfo: Login denied by config-file</td></td></tr>
+    		<?php }  ?>
+    		
+    		<?php  if ($g['body']['form']['acc_sel']) { ?>
+    				
+    			<tr><td></td>
+    			  <td><select class="xField_sel" name="db_index">
+    			  <?php 
+				   foreach($g['body']['form']['db_index_arr'] as $row) {
+    				  echo  '<option value="'.$row[0].'">&nbsp;&nbsp;&nbsp;'.$row[1].' &nbsp;&nbsp;&nbsp;'."\n";
+    			   } ?>
+    			  </select></td>
+    			</tr>
+    		<?php }  ?>
+    		
+    		<?php  if ($g['body']['form']['acc_miss']) { ?>
+				<tr><td valign=top><span style="color:red;"><b>Database name missing:&nbsp;&nbsp;</b></span></td>
+				<td><span style="color:#505050;">";
+				Parameter for database name expected.<br>Please use the correct URL or ask the admin.<br><br>  
+				</span></td></tr>       
+				<tr><td valign=top><span style="color:#505050;"><b>Possible reasons:&nbsp;&nbsp;</b></span></td>
+				<td><span style="color:#505050;">
+				<li>previous session timed out</li>
+				<li>unauthorized login trial</li>
+				<li>wrong URL parameter</li>
+				</span></td></tr>
+    		<?php }  ?>
+    		
+    	<tr>
+    	  <td NOWRAP>
+    	  </td>
+    	  <td style="text-align:center">
+    	  
+    	<?php if ($g['body']['form']['login_allow']) { ?>
+   
+    		<input type="submit" value="LOGIN" class=submitButton tabindex="3">
+    		<?php 
+			if ($g['body']['form']['isMobile']) $tmpMobileCheck=' checked';
+    		else $tmpMobileCheck='';
+			?>
+    		<br><br>
+    		<input type=checkbox name=sPwdCook value=1><span class=xSmall> save in cookie&nbsp;&nbsp;</span> &nbsp;&nbsp;&nbsp;
+    		<input type=checkbox name=sSurfMobile value=1 <?php echo $tmpMobileCheck; ?>><span class=xSmall> mobile</span>
+	
+    	<?php } else { ?>
+    	    <B><span style="color:red;">Login not possible</span></B>
+    	<?php } ?>
+
+    	</td>
+    	</tr></table>
+    		
+    	<?php } //AppIsOpen:END ?> 
+    	
+    	</td>  <!-- LOGIN_FIELDS:END -->
+    	</tr>
+    	<tr>
+    		<td colspan=3>
+    			<span class=xSmall>
+    		Copyright &copy; 2021, Powered by Q-Meta<br>Blink AG, <span class=xLink><a href="f.LICENSE_link.php">LICENSE</a></span></span>
+    		</td>
+    	</tr>
+    	<tr><td>
+    	<?php echo $g['body']['post_text']; ?>
+    	</td></tr>
+    	</table>
+    	<input type=hidden name=logFromCook value=0>
+    	<?php 
+		/* OLD: no focus, because of placeholder:focus-bug in IE10
+    	if (!$flagAppIsOpen) {
+			<script type="text/javascript">
+    		document.editform.elements["cctuser"].focus();
+	    	</script>
+    	}
+    	*/
+		?>
+    	</form>
+
+    	</div><!-- DIV:0 -->
+    	
+    	<?php if ( $g['body']['cookie_forward']) { ?>    
+	        <div class=\"center\"><span style=\"color:#808080;\">... take login information from Cookie</span></div><br>
+	        <script type="text/javascript">
+	        document.editform.logFromCook.value ='1';
+	        document.editform.submit();
+	        </script>
+	        </div>
+        <?php } ?>
+        
+        
+        
+<?php include( dirname(__FILE__).'/../macro/html_end.html'); ?>
